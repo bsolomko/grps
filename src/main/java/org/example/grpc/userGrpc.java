@@ -1,10 +1,18 @@
 package org.example.grpc;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
 import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
@@ -19,30 +27,30 @@ public final class userGrpc {
   public static final String SERVICE_NAME = "user";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<UserOuterClass.UserIdRequest,
-      UserOuterClass.UserResponse> getFindUserByIdMethod;
+  private static volatile io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.UserIdRequest,
+      org.example.grpc.UserOuterClass.UserResponse> getFindUserByIdMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "findUserById",
-      requestType = UserOuterClass.UserIdRequest.class,
-      responseType = UserOuterClass.UserResponse.class,
+      requestType = org.example.grpc.UserOuterClass.UserIdRequest.class,
+      responseType = org.example.grpc.UserOuterClass.UserResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<UserOuterClass.UserIdRequest,
-      UserOuterClass.UserResponse> getFindUserByIdMethod() {
-    io.grpc.MethodDescriptor<UserOuterClass.UserIdRequest, UserOuterClass.UserResponse> getFindUserByIdMethod;
+  public static io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.UserIdRequest,
+      org.example.grpc.UserOuterClass.UserResponse> getFindUserByIdMethod() {
+    io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.UserIdRequest, org.example.grpc.UserOuterClass.UserResponse> getFindUserByIdMethod;
     if ((getFindUserByIdMethod = userGrpc.getFindUserByIdMethod) == null) {
       synchronized (userGrpc.class) {
         if ((getFindUserByIdMethod = userGrpc.getFindUserByIdMethod) == null) {
           userGrpc.getFindUserByIdMethod = getFindUserByIdMethod =
-              io.grpc.MethodDescriptor.<UserOuterClass.UserIdRequest, UserOuterClass.UserResponse>newBuilder()
+              io.grpc.MethodDescriptor.<org.example.grpc.UserOuterClass.UserIdRequest, org.example.grpc.UserOuterClass.UserResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "user", "findUserById"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  UserOuterClass.UserIdRequest.getDefaultInstance()))
+                  org.example.grpc.UserOuterClass.UserIdRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  UserOuterClass.UserResponse.getDefaultInstance()))
+                  org.example.grpc.UserOuterClass.UserResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new userMethodDescriptorSupplier("findUserById"))
                   .build();
           }
@@ -51,30 +59,30 @@ public final class userGrpc {
      return getFindUserByIdMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<UserOuterClass.UserRequest,
-      UserOuterClass.UserResponse> getCreateMethod;
+  private static volatile io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.UserRequest,
+      org.example.grpc.UserOuterClass.UserResponse> getCreateMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "create",
-      requestType = UserOuterClass.UserRequest.class,
-      responseType = UserOuterClass.UserResponse.class,
+      requestType = org.example.grpc.UserOuterClass.UserRequest.class,
+      responseType = org.example.grpc.UserOuterClass.UserResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<UserOuterClass.UserRequest,
-      UserOuterClass.UserResponse> getCreateMethod() {
-    io.grpc.MethodDescriptor<UserOuterClass.UserRequest, UserOuterClass.UserResponse> getCreateMethod;
+  public static io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.UserRequest,
+      org.example.grpc.UserOuterClass.UserResponse> getCreateMethod() {
+    io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.UserRequest, org.example.grpc.UserOuterClass.UserResponse> getCreateMethod;
     if ((getCreateMethod = userGrpc.getCreateMethod) == null) {
       synchronized (userGrpc.class) {
         if ((getCreateMethod = userGrpc.getCreateMethod) == null) {
           userGrpc.getCreateMethod = getCreateMethod =
-              io.grpc.MethodDescriptor.<UserOuterClass.UserRequest, UserOuterClass.UserResponse>newBuilder()
+              io.grpc.MethodDescriptor.<org.example.grpc.UserOuterClass.UserRequest, org.example.grpc.UserOuterClass.UserResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "user", "create"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  UserOuterClass.UserRequest.getDefaultInstance()))
+                  org.example.grpc.UserOuterClass.UserRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  UserOuterClass.UserResponse.getDefaultInstance()))
+                  org.example.grpc.UserOuterClass.UserResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new userMethodDescriptorSupplier("create"))
                   .build();
           }
@@ -83,30 +91,30 @@ public final class userGrpc {
      return getCreateMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<UserOuterClass.Empty,
-      UserOuterClass.AllUsersResponse> getGetAllUsersMethod;
+  private static volatile io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.Empty,
+      org.example.grpc.UserOuterClass.AllUsersResponse> getGetAllUsersMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getAllUsers",
-      requestType = UserOuterClass.Empty.class,
-      responseType = UserOuterClass.AllUsersResponse.class,
+      requestType = org.example.grpc.UserOuterClass.Empty.class,
+      responseType = org.example.grpc.UserOuterClass.AllUsersResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<UserOuterClass.Empty,
-      UserOuterClass.AllUsersResponse> getGetAllUsersMethod() {
-    io.grpc.MethodDescriptor<UserOuterClass.Empty, UserOuterClass.AllUsersResponse> getGetAllUsersMethod;
+  public static io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.Empty,
+      org.example.grpc.UserOuterClass.AllUsersResponse> getGetAllUsersMethod() {
+    io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.Empty, org.example.grpc.UserOuterClass.AllUsersResponse> getGetAllUsersMethod;
     if ((getGetAllUsersMethod = userGrpc.getGetAllUsersMethod) == null) {
       synchronized (userGrpc.class) {
         if ((getGetAllUsersMethod = userGrpc.getGetAllUsersMethod) == null) {
           userGrpc.getGetAllUsersMethod = getGetAllUsersMethod =
-              io.grpc.MethodDescriptor.<UserOuterClass.Empty, UserOuterClass.AllUsersResponse>newBuilder()
+              io.grpc.MethodDescriptor.<org.example.grpc.UserOuterClass.Empty, org.example.grpc.UserOuterClass.AllUsersResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "user", "getAllUsers"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  UserOuterClass.Empty.getDefaultInstance()))
+                  org.example.grpc.UserOuterClass.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  UserOuterClass.AllUsersResponse.getDefaultInstance()))
+                  org.example.grpc.UserOuterClass.AllUsersResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new userMethodDescriptorSupplier("getAllUsers"))
                   .build();
           }
@@ -115,30 +123,30 @@ public final class userGrpc {
      return getGetAllUsersMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<UserOuterClass.UserRequest,
-      UserOuterClass.UserResponse> getUpdateMethod;
+  private static volatile io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.UserRequest,
+      org.example.grpc.UserOuterClass.UserResponse> getUpdateMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "update",
-      requestType = UserOuterClass.UserRequest.class,
-      responseType = UserOuterClass.UserResponse.class,
+      requestType = org.example.grpc.UserOuterClass.UserRequest.class,
+      responseType = org.example.grpc.UserOuterClass.UserResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<UserOuterClass.UserRequest,
-      UserOuterClass.UserResponse> getUpdateMethod() {
-    io.grpc.MethodDescriptor<UserOuterClass.UserRequest, UserOuterClass.UserResponse> getUpdateMethod;
+  public static io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.UserRequest,
+      org.example.grpc.UserOuterClass.UserResponse> getUpdateMethod() {
+    io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.UserRequest, org.example.grpc.UserOuterClass.UserResponse> getUpdateMethod;
     if ((getUpdateMethod = userGrpc.getUpdateMethod) == null) {
       synchronized (userGrpc.class) {
         if ((getUpdateMethod = userGrpc.getUpdateMethod) == null) {
           userGrpc.getUpdateMethod = getUpdateMethod =
-              io.grpc.MethodDescriptor.<UserOuterClass.UserRequest, UserOuterClass.UserResponse>newBuilder()
+              io.grpc.MethodDescriptor.<org.example.grpc.UserOuterClass.UserRequest, org.example.grpc.UserOuterClass.UserResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "user", "update"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  UserOuterClass.UserRequest.getDefaultInstance()))
+                  org.example.grpc.UserOuterClass.UserRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  UserOuterClass.UserResponse.getDefaultInstance()))
+                  org.example.grpc.UserOuterClass.UserResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new userMethodDescriptorSupplier("update"))
                   .build();
           }
@@ -147,30 +155,30 @@ public final class userGrpc {
      return getUpdateMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<UserOuterClass.UserIdRequest,
-      UserOuterClass.UserResponse> getDeleteMethod;
+  private static volatile io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.UserIdRequest,
+      org.example.grpc.UserOuterClass.UserResponse> getDeleteMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "delete",
-      requestType = UserOuterClass.UserIdRequest.class,
-      responseType = UserOuterClass.UserResponse.class,
+      requestType = org.example.grpc.UserOuterClass.UserIdRequest.class,
+      responseType = org.example.grpc.UserOuterClass.UserResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<UserOuterClass.UserIdRequest,
-      UserOuterClass.UserResponse> getDeleteMethod() {
-    io.grpc.MethodDescriptor<UserOuterClass.UserIdRequest, UserOuterClass.UserResponse> getDeleteMethod;
+  public static io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.UserIdRequest,
+      org.example.grpc.UserOuterClass.UserResponse> getDeleteMethod() {
+    io.grpc.MethodDescriptor<org.example.grpc.UserOuterClass.UserIdRequest, org.example.grpc.UserOuterClass.UserResponse> getDeleteMethod;
     if ((getDeleteMethod = userGrpc.getDeleteMethod) == null) {
       synchronized (userGrpc.class) {
         if ((getDeleteMethod = userGrpc.getDeleteMethod) == null) {
           userGrpc.getDeleteMethod = getDeleteMethod =
-              io.grpc.MethodDescriptor.<UserOuterClass.UserIdRequest, UserOuterClass.UserResponse>newBuilder()
+              io.grpc.MethodDescriptor.<org.example.grpc.UserOuterClass.UserIdRequest, org.example.grpc.UserOuterClass.UserResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "user", "delete"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  UserOuterClass.UserIdRequest.getDefaultInstance()))
+                  org.example.grpc.UserOuterClass.UserIdRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  UserOuterClass.UserResponse.getDefaultInstance()))
+                  org.example.grpc.UserOuterClass.UserResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new userMethodDescriptorSupplier("delete"))
                   .build();
           }
@@ -180,14 +188,14 @@ public final class userGrpc {
   }
 
   /**
-   * Creates a new async stub that supports all call types for the com.service
+   * Creates a new async stub that supports all call types for the com.learn.service
    */
   public static userStub newStub(io.grpc.Channel channel) {
     return new userStub(channel);
   }
 
   /**
-   * Creates a new blocking-style stub that supports unary and streaming output calls on the com.service
+   * Creates a new blocking-style stub that supports unary and streaming output calls on the com.learn.service
    */
   public static userBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
@@ -195,7 +203,7 @@ public final class userGrpc {
   }
 
   /**
-   * Creates a new ListenableFuture-style stub that supports unary calls on the com.service
+   * Creates a new ListenableFuture-style stub that supports unary calls on the com.learn.service
    */
   public static userFutureStub newFutureStub(
       io.grpc.Channel channel) {
@@ -208,75 +216,75 @@ public final class userGrpc {
 
     /**
      */
-    public void findUserById(UserOuterClass.UserIdRequest request,
-                             io.grpc.stub.StreamObserver<UserOuterClass.UserResponse> responseObserver) {
+    public void findUserById(org.example.grpc.UserOuterClass.UserIdRequest request,
+        io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.UserResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getFindUserByIdMethod(), responseObserver);
     }
 
     /**
      */
-    public void create(UserOuterClass.UserRequest request,
-                       io.grpc.stub.StreamObserver<UserOuterClass.UserResponse> responseObserver) {
+    public void create(org.example.grpc.UserOuterClass.UserRequest request,
+        io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.UserResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateMethod(), responseObserver);
     }
 
     /**
      */
-    public void getAllUsers(UserOuterClass.Empty request,
-                            io.grpc.stub.StreamObserver<UserOuterClass.AllUsersResponse> responseObserver) {
+    public void getAllUsers(org.example.grpc.UserOuterClass.Empty request,
+        io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.AllUsersResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getGetAllUsersMethod(), responseObserver);
     }
 
     /**
      */
-    public void update(UserOuterClass.UserRequest request,
-                       io.grpc.stub.StreamObserver<UserOuterClass.UserResponse> responseObserver) {
+    public void update(org.example.grpc.UserOuterClass.UserRequest request,
+        io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.UserResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateMethod(), responseObserver);
     }
 
     /**
      */
-    public void delete(UserOuterClass.UserIdRequest request,
-                       io.grpc.stub.StreamObserver<UserOuterClass.UserResponse> responseObserver) {
+    public void delete(org.example.grpc.UserOuterClass.UserIdRequest request,
+        io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.UserResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteMethod(), responseObserver);
     }
 
-    @Override public final io.grpc.ServerServiceDefinition bindService() {
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getFindUserByIdMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                UserOuterClass.UserIdRequest,
-                UserOuterClass.UserResponse>(
+                org.example.grpc.UserOuterClass.UserIdRequest,
+                org.example.grpc.UserOuterClass.UserResponse>(
                   this, METHODID_FIND_USER_BY_ID)))
           .addMethod(
             getCreateMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                UserOuterClass.UserRequest,
-                UserOuterClass.UserResponse>(
+                org.example.grpc.UserOuterClass.UserRequest,
+                org.example.grpc.UserOuterClass.UserResponse>(
                   this, METHODID_CREATE)))
           .addMethod(
             getGetAllUsersMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                UserOuterClass.Empty,
-                UserOuterClass.AllUsersResponse>(
+                org.example.grpc.UserOuterClass.Empty,
+                org.example.grpc.UserOuterClass.AllUsersResponse>(
                   this, METHODID_GET_ALL_USERS)))
           .addMethod(
             getUpdateMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                UserOuterClass.UserRequest,
-                UserOuterClass.UserResponse>(
+                org.example.grpc.UserOuterClass.UserRequest,
+                org.example.grpc.UserOuterClass.UserResponse>(
                   this, METHODID_UPDATE)))
           .addMethod(
             getDeleteMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                UserOuterClass.UserIdRequest,
-                UserOuterClass.UserResponse>(
+                org.example.grpc.UserOuterClass.UserIdRequest,
+                org.example.grpc.UserOuterClass.UserResponse>(
                   this, METHODID_DELETE)))
           .build();
     }
@@ -294,7 +302,7 @@ public final class userGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected userStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new userStub(channel, callOptions);
@@ -302,40 +310,40 @@ public final class userGrpc {
 
     /**
      */
-    public void findUserById(UserOuterClass.UserIdRequest request,
-                             io.grpc.stub.StreamObserver<UserOuterClass.UserResponse> responseObserver) {
+    public void findUserById(org.example.grpc.UserOuterClass.UserIdRequest request,
+        io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.UserResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getFindUserByIdMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void create(UserOuterClass.UserRequest request,
-                       io.grpc.stub.StreamObserver<UserOuterClass.UserResponse> responseObserver) {
+    public void create(org.example.grpc.UserOuterClass.UserRequest request,
+        io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.UserResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getCreateMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void getAllUsers(UserOuterClass.Empty request,
-                            io.grpc.stub.StreamObserver<UserOuterClass.AllUsersResponse> responseObserver) {
+    public void getAllUsers(org.example.grpc.UserOuterClass.Empty request,
+        io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.AllUsersResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetAllUsersMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void update(UserOuterClass.UserRequest request,
-                       io.grpc.stub.StreamObserver<UserOuterClass.UserResponse> responseObserver) {
+    public void update(org.example.grpc.UserOuterClass.UserRequest request,
+        io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.UserResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getUpdateMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void delete(UserOuterClass.UserIdRequest request,
-                       io.grpc.stub.StreamObserver<UserOuterClass.UserResponse> responseObserver) {
+    public void delete(org.example.grpc.UserOuterClass.UserIdRequest request,
+        io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.UserResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDeleteMethod(), getCallOptions()), request, responseObserver);
     }
@@ -353,7 +361,7 @@ public final class userGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected userBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new userBlockingStub(channel, callOptions);
@@ -361,35 +369,35 @@ public final class userGrpc {
 
     /**
      */
-    public UserOuterClass.UserResponse findUserById(UserOuterClass.UserIdRequest request) {
+    public org.example.grpc.UserOuterClass.UserResponse findUserById(org.example.grpc.UserOuterClass.UserIdRequest request) {
       return blockingUnaryCall(
           getChannel(), getFindUserByIdMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public UserOuterClass.UserResponse create(UserOuterClass.UserRequest request) {
+    public org.example.grpc.UserOuterClass.UserResponse create(org.example.grpc.UserOuterClass.UserRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public UserOuterClass.AllUsersResponse getAllUsers(UserOuterClass.Empty request) {
+    public org.example.grpc.UserOuterClass.AllUsersResponse getAllUsers(org.example.grpc.UserOuterClass.Empty request) {
       return blockingUnaryCall(
           getChannel(), getGetAllUsersMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public UserOuterClass.UserResponse update(UserOuterClass.UserRequest request) {
+    public org.example.grpc.UserOuterClass.UserResponse update(org.example.grpc.UserOuterClass.UserRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public UserOuterClass.UserResponse delete(UserOuterClass.UserIdRequest request) {
+    public org.example.grpc.UserOuterClass.UserResponse delete(org.example.grpc.UserOuterClass.UserIdRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteMethod(), getCallOptions(), request);
     }
@@ -407,7 +415,7 @@ public final class userGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected userFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new userFutureStub(channel, callOptions);
@@ -415,40 +423,40 @@ public final class userGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<UserOuterClass.UserResponse> findUserById(
-        UserOuterClass.UserIdRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<org.example.grpc.UserOuterClass.UserResponse> findUserById(
+        org.example.grpc.UserOuterClass.UserIdRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getFindUserByIdMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<UserOuterClass.UserResponse> create(
-        UserOuterClass.UserRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<org.example.grpc.UserOuterClass.UserResponse> create(
+        org.example.grpc.UserOuterClass.UserRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<UserOuterClass.AllUsersResponse> getAllUsers(
-        UserOuterClass.Empty request) {
+    public com.google.common.util.concurrent.ListenableFuture<org.example.grpc.UserOuterClass.AllUsersResponse> getAllUsers(
+        org.example.grpc.UserOuterClass.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getGetAllUsersMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<UserOuterClass.UserResponse> update(
-        UserOuterClass.UserRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<org.example.grpc.UserOuterClass.UserResponse> update(
+        org.example.grpc.UserOuterClass.UserRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUpdateMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<UserOuterClass.UserResponse> delete(
-        UserOuterClass.UserIdRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<org.example.grpc.UserOuterClass.UserResponse> delete(
+        org.example.grpc.UserOuterClass.UserIdRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteMethod(), getCallOptions()), request);
     }
@@ -473,37 +481,37 @@ public final class userGrpc {
       this.methodId = methodId;
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
+    @java.lang.Override
+    @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_FIND_USER_BY_ID:
-          serviceImpl.findUserById((UserOuterClass.UserIdRequest) request,
-              (io.grpc.stub.StreamObserver<UserOuterClass.UserResponse>) responseObserver);
+          serviceImpl.findUserById((org.example.grpc.UserOuterClass.UserIdRequest) request,
+              (io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.UserResponse>) responseObserver);
           break;
         case METHODID_CREATE:
-          serviceImpl.create((UserOuterClass.UserRequest) request,
-              (io.grpc.stub.StreamObserver<UserOuterClass.UserResponse>) responseObserver);
+          serviceImpl.create((org.example.grpc.UserOuterClass.UserRequest) request,
+              (io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.UserResponse>) responseObserver);
           break;
         case METHODID_GET_ALL_USERS:
-          serviceImpl.getAllUsers((UserOuterClass.Empty) request,
-              (io.grpc.stub.StreamObserver<UserOuterClass.AllUsersResponse>) responseObserver);
+          serviceImpl.getAllUsers((org.example.grpc.UserOuterClass.Empty) request,
+              (io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.AllUsersResponse>) responseObserver);
           break;
         case METHODID_UPDATE:
-          serviceImpl.update((UserOuterClass.UserRequest) request,
-              (io.grpc.stub.StreamObserver<UserOuterClass.UserResponse>) responseObserver);
+          serviceImpl.update((org.example.grpc.UserOuterClass.UserRequest) request,
+              (io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.UserResponse>) responseObserver);
           break;
         case METHODID_DELETE:
-          serviceImpl.delete((UserOuterClass.UserIdRequest) request,
-              (io.grpc.stub.StreamObserver<UserOuterClass.UserResponse>) responseObserver);
+          serviceImpl.delete((org.example.grpc.UserOuterClass.UserIdRequest) request,
+              (io.grpc.stub.StreamObserver<org.example.grpc.UserOuterClass.UserResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
       }
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
+    @java.lang.Override
+    @java.lang.SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
@@ -517,12 +525,12 @@ public final class userGrpc {
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     userBaseDescriptorSupplier() {}
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return UserOuterClass.getDescriptor();
+      return org.example.grpc.UserOuterClass.getDescriptor();
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
       return getFileDescriptor().findServiceByName("user");
     }
@@ -542,7 +550,7 @@ public final class userGrpc {
       this.methodName = methodName;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
       return getServiceDescriptor().findMethodByName(methodName);
     }

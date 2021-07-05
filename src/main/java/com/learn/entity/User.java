@@ -1,4 +1,4 @@
-package learn.entity;
+package com.learn.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,7 +11,7 @@ public class User {
     public String userName;
     public String email;
 
-    public User(int id, String username, String email) {
+    public User(int id, String username,String email) {
         this.userName = userName;
         this.email = email;
         this.id = id;
@@ -21,12 +21,10 @@ public class User {
         this.id = id;
     }
 
-    public User() {
-    }
+    public User() {}
 
-    public User(int id, String email) {
-        this.id = id;
-        this.email = email;
+    public User(String userName, String email) {
+
     }
 
     @Override
@@ -39,6 +37,7 @@ public class User {
     public int getId() {
         return id;
     }
+
 
 
     public String getUserName() {

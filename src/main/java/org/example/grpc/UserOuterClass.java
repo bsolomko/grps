@@ -20,6 +20,7 @@ public final class UserOuterClass {
 
     /**
      * <code>int32 id = 1;</code>
+     * @return The id.
      */
     int getId();
   }
@@ -36,7 +37,13 @@ public final class UserOuterClass {
       super(builder);
     }
     private UserIdRequest() {
-      id_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserIdRequest();
     }
 
     @java.lang.Override
@@ -52,7 +59,6 @@ public final class UserOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -69,7 +75,7 @@ public final class UserOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -104,6 +110,7 @@ public final class UserOuterClass {
     private int id_;
     /**
      * <code>int32 id = 1;</code>
+     * @return The id.
      */
     public int getId() {
       return id_;
@@ -154,11 +161,10 @@ public final class UserOuterClass {
       }
       org.example.grpc.UserOuterClass.UserIdRequest other = (org.example.grpc.UserOuterClass.UserIdRequest) obj;
 
-      boolean result = true;
-      result = result && (getId()
-          == other.getId());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getId()
+          != other.getId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -338,35 +344,35 @@ public final class UserOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -415,12 +421,15 @@ public final class UserOuterClass {
       private int id_ ;
       /**
        * <code>int32 id = 1;</code>
+       * @return The id.
        */
       public int getId() {
         return id_;
       }
       /**
        * <code>int32 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(int value) {
         
@@ -430,6 +439,7 @@ public final class UserOuterClass {
       }
       /**
        * <code>int32 id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -440,7 +450,7 @@ public final class UserOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -496,10 +506,12 @@ public final class UserOuterClass {
 
     /**
      * <code>.User user = 1;</code>
+     * @return Whether the user field is set.
      */
     boolean hasUser();
     /**
      * <code>.User user = 1;</code>
+     * @return The user.
      */
     org.example.grpc.UserOuterClass.User getUser();
     /**
@@ -523,6 +535,13 @@ public final class UserOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -535,7 +554,6 @@ public final class UserOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -560,7 +578,7 @@ public final class UserOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -595,12 +613,14 @@ public final class UserOuterClass {
     private org.example.grpc.UserOuterClass.User user_;
     /**
      * <code>.User user = 1;</code>
+     * @return Whether the user field is set.
      */
     public boolean hasUser() {
       return user_ != null;
     }
     /**
      * <code>.User user = 1;</code>
+     * @return The user.
      */
     public org.example.grpc.UserOuterClass.User getUser() {
       return user_ == null ? org.example.grpc.UserOuterClass.User.getDefaultInstance() : user_;
@@ -657,14 +677,13 @@ public final class UserOuterClass {
       }
       org.example.grpc.UserOuterClass.UserRequest other = (org.example.grpc.UserOuterClass.UserRequest) obj;
 
-      boolean result = true;
-      result = result && (hasUser() == other.hasUser());
+      if (hasUser() != other.hasUser()) return false;
       if (hasUser()) {
-        result = result && getUser()
-            .equals(other.getUser());
+        if (!getUser()
+            .equals(other.getUser())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -854,35 +873,35 @@ public final class UserOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -928,17 +947,19 @@ public final class UserOuterClass {
         return this;
       }
 
-      private org.example.grpc.UserOuterClass.User user_ = null;
+      private org.example.grpc.UserOuterClass.User user_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.example.grpc.UserOuterClass.User, org.example.grpc.UserOuterClass.User.Builder, org.example.grpc.UserOuterClass.UserOrBuilder> userBuilder_;
       /**
        * <code>.User user = 1;</code>
+       * @return Whether the user field is set.
        */
       public boolean hasUser() {
         return userBuilder_ != null || user_ != null;
       }
       /**
        * <code>.User user = 1;</code>
+       * @return The user.
        */
       public org.example.grpc.UserOuterClass.User getUser() {
         if (userBuilder_ == null) {
@@ -1047,7 +1068,7 @@ public final class UserOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1103,10 +1124,12 @@ public final class UserOuterClass {
 
     /**
      * <code>.User user = 1;</code>
+     * @return Whether the user field is set.
      */
     boolean hasUser();
     /**
      * <code>.User user = 1;</code>
+     * @return The user.
      */
     org.example.grpc.UserOuterClass.User getUser();
     /**
@@ -1130,6 +1153,13 @@ public final class UserOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1142,7 +1172,6 @@ public final class UserOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1167,7 +1196,7 @@ public final class UserOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1202,12 +1231,14 @@ public final class UserOuterClass {
     private org.example.grpc.UserOuterClass.User user_;
     /**
      * <code>.User user = 1;</code>
+     * @return Whether the user field is set.
      */
     public boolean hasUser() {
       return user_ != null;
     }
     /**
      * <code>.User user = 1;</code>
+     * @return The user.
      */
     public org.example.grpc.UserOuterClass.User getUser() {
       return user_ == null ? org.example.grpc.UserOuterClass.User.getDefaultInstance() : user_;
@@ -1264,14 +1295,13 @@ public final class UserOuterClass {
       }
       org.example.grpc.UserOuterClass.UserResponse other = (org.example.grpc.UserOuterClass.UserResponse) obj;
 
-      boolean result = true;
-      result = result && (hasUser() == other.hasUser());
+      if (hasUser() != other.hasUser()) return false;
       if (hasUser()) {
-        result = result && getUser()
-            .equals(other.getUser());
+        if (!getUser()
+            .equals(other.getUser())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1461,35 +1491,35 @@ public final class UserOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1535,17 +1565,19 @@ public final class UserOuterClass {
         return this;
       }
 
-      private org.example.grpc.UserOuterClass.User user_ = null;
+      private org.example.grpc.UserOuterClass.User user_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.example.grpc.UserOuterClass.User, org.example.grpc.UserOuterClass.User.Builder, org.example.grpc.UserOuterClass.UserOrBuilder> userBuilder_;
       /**
        * <code>.User user = 1;</code>
+       * @return Whether the user field is set.
        */
       public boolean hasUser() {
         return userBuilder_ != null || user_ != null;
       }
       /**
        * <code>.User user = 1;</code>
+       * @return The user.
        */
       public org.example.grpc.UserOuterClass.User getUser() {
         if (userBuilder_ == null) {
@@ -1654,7 +1686,7 @@ public final class UserOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1749,6 +1781,13 @@ public final class UserOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AllUsersResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1773,7 +1812,7 @@ public final class UserOuterClass {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 user_ = new java.util.ArrayList<org.example.grpc.UserOuterClass.User>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -1782,7 +1821,7 @@ public final class UserOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1796,7 +1835,7 @@ public final class UserOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           user_ = java.util.Collections.unmodifiableList(user_);
         }
         this.unknownFields = unknownFields.build();
@@ -1896,11 +1935,10 @@ public final class UserOuterClass {
       }
       org.example.grpc.UserOuterClass.AllUsersResponse other = (org.example.grpc.UserOuterClass.AllUsersResponse) obj;
 
-      boolean result = true;
-      result = result && getUserList()
-          .equals(other.getUserList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getUserList()
+          .equals(other.getUserList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2082,7 +2120,7 @@ public final class UserOuterClass {
         org.example.grpc.UserOuterClass.AllUsersResponse result = new org.example.grpc.UserOuterClass.AllUsersResponse(this);
         int from_bitField0_ = bitField0_;
         if (userBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             user_ = java.util.Collections.unmodifiableList(user_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -2096,35 +2134,35 @@ public final class UserOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2197,7 +2235,7 @@ public final class UserOuterClass {
       private java.util.List<org.example.grpc.UserOuterClass.User> user_ =
         java.util.Collections.emptyList();
       private void ensureUserIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           user_ = new java.util.ArrayList<org.example.grpc.UserOuterClass.User>(user_);
           bitField0_ |= 0x00000001;
          }
@@ -2426,7 +2464,7 @@ public final class UserOuterClass {
           userBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.example.grpc.UserOuterClass.User, org.example.grpc.UserOuterClass.User.Builder, org.example.grpc.UserOuterClass.UserOrBuilder>(
                   user_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           user_ = null;
@@ -2436,7 +2474,7 @@ public final class UserOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2492,25 +2530,30 @@ public final class UserOuterClass {
 
     /**
      * <code>int32 id = 1;</code>
+     * @return The id.
      */
     int getId();
 
     /**
      * <code>string username = 2;</code>
+     * @return The username.
      */
     java.lang.String getUsername();
     /**
      * <code>string username = 2;</code>
+     * @return The bytes for username.
      */
     com.google.protobuf.ByteString
         getUsernameBytes();
 
     /**
      * <code>string email = 3;</code>
+     * @return The email.
      */
     java.lang.String getEmail();
     /**
      * <code>string email = 3;</code>
+     * @return The bytes for email.
      */
     com.google.protobuf.ByteString
         getEmailBytes();
@@ -2528,9 +2571,15 @@ public final class UserOuterClass {
       super(builder);
     }
     private User() {
-      id_ = 0;
       username_ = "";
       email_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new User();
     }
 
     @java.lang.Override
@@ -2546,7 +2595,6 @@ public final class UserOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2575,7 +2623,7 @@ public final class UserOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -2610,6 +2658,7 @@ public final class UserOuterClass {
     private int id_;
     /**
      * <code>int32 id = 1;</code>
+     * @return The id.
      */
     public int getId() {
       return id_;
@@ -2619,6 +2668,7 @@ public final class UserOuterClass {
     private volatile java.lang.Object username_;
     /**
      * <code>string username = 2;</code>
+     * @return The username.
      */
     public java.lang.String getUsername() {
       java.lang.Object ref = username_;
@@ -2634,6 +2684,7 @@ public final class UserOuterClass {
     }
     /**
      * <code>string username = 2;</code>
+     * @return The bytes for username.
      */
     public com.google.protobuf.ByteString
         getUsernameBytes() {
@@ -2653,6 +2704,7 @@ public final class UserOuterClass {
     private volatile java.lang.Object email_;
     /**
      * <code>string email = 3;</code>
+     * @return The email.
      */
     public java.lang.String getEmail() {
       java.lang.Object ref = email_;
@@ -2668,6 +2720,7 @@ public final class UserOuterClass {
     }
     /**
      * <code>string email = 3;</code>
+     * @return The bytes for email.
      */
     public com.google.protobuf.ByteString
         getEmailBytes() {
@@ -2740,15 +2793,14 @@ public final class UserOuterClass {
       }
       org.example.grpc.UserOuterClass.User other = (org.example.grpc.UserOuterClass.User) obj;
 
-      boolean result = true;
-      result = result && (getId()
-          == other.getId());
-      result = result && getUsername()
-          .equals(other.getUsername());
-      result = result && getEmail()
-          .equals(other.getEmail());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getId()
+          != other.getId()) return false;
+      if (!getUsername()
+          .equals(other.getUsername())) return false;
+      if (!getEmail()
+          .equals(other.getEmail())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2938,35 +2990,35 @@ public final class UserOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3023,13 +3075,15 @@ public final class UserOuterClass {
       private int id_ ;
       /**
        * <code>int32 id = 1;</code>
+       * @return The id.
        */
       public int getId() {
         return id_;
       }
       /**
        * <code>int32 id = 1;</code>
-       * @param value
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(Integer value) {
         
@@ -3039,6 +3093,7 @@ public final class UserOuterClass {
       }
       /**
        * <code>int32 id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -3050,6 +3105,7 @@ public final class UserOuterClass {
       private java.lang.Object username_ = "";
       /**
        * <code>string username = 2;</code>
+       * @return The username.
        */
       public java.lang.String getUsername() {
         java.lang.Object ref = username_;
@@ -3065,6 +3121,7 @@ public final class UserOuterClass {
       }
       /**
        * <code>string username = 2;</code>
+       * @return The bytes for username.
        */
       public com.google.protobuf.ByteString
           getUsernameBytes() {
@@ -3081,6 +3138,8 @@ public final class UserOuterClass {
       }
       /**
        * <code>string username = 2;</code>
+       * @param value The username to set.
+       * @return This builder for chaining.
        */
       public Builder setUsername(
           java.lang.String value) {
@@ -3094,6 +3153,7 @@ public final class UserOuterClass {
       }
       /**
        * <code>string username = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUsername() {
         
@@ -3103,6 +3163,8 @@ public final class UserOuterClass {
       }
       /**
        * <code>string username = 2;</code>
+       * @param value The bytes for username to set.
+       * @return This builder for chaining.
        */
       public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
@@ -3119,6 +3181,7 @@ public final class UserOuterClass {
       private java.lang.Object email_ = "";
       /**
        * <code>string email = 3;</code>
+       * @return The email.
        */
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
@@ -3134,6 +3197,7 @@ public final class UserOuterClass {
       }
       /**
        * <code>string email = 3;</code>
+       * @return The bytes for email.
        */
       public com.google.protobuf.ByteString
           getEmailBytes() {
@@ -3150,6 +3214,8 @@ public final class UserOuterClass {
       }
       /**
        * <code>string email = 3;</code>
+       * @param value The email to set.
+       * @return This builder for chaining.
        */
       public Builder setEmail(
           java.lang.String value) {
@@ -3163,6 +3229,7 @@ public final class UserOuterClass {
       }
       /**
        * <code>string email = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearEmail() {
         
@@ -3172,6 +3239,8 @@ public final class UserOuterClass {
       }
       /**
        * <code>string email = 3;</code>
+       * @param value The bytes for email to set.
+       * @return This builder for chaining.
        */
       public Builder setEmailBytes(
           com.google.protobuf.ByteString value) {
@@ -3187,7 +3256,7 @@ public final class UserOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3257,6 +3326,13 @@ public final class UserOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Empty();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -3280,7 +3356,7 @@ public final class UserOuterClass {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -3349,9 +3425,8 @@ public final class UserOuterClass {
       }
       org.example.grpc.UserOuterClass.Empty other = (org.example.grpc.UserOuterClass.Empty) obj;
 
-      boolean result = true;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3526,35 +3601,35 @@ public final class UserOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3599,7 +3674,7 @@ public final class UserOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3701,18 +3776,10 @@ public final class UserOuterClass {
       "ete\022\016.UserIdRequest\032\r.UserResponseB\022\n\020or" +
       "g.example.grpcb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_UserIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_UserIdRequest_fieldAccessorTable = new

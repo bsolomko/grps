@@ -1,16 +1,17 @@
-package service;
+package com.learn.service;
 
 
-
+import com.learn.entity.User;
 import io.grpc.stub.StreamObserver;
-import learn.entity.User;
-import learn.repository.UserRepository;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.example.grpc.UserOuterClass;
 import org.example.grpc.userGrpc;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.learn.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 
 @GrpcService
 public class UserService extends userGrpc.userImplBase {
@@ -31,14 +32,6 @@ public class UserService extends userGrpc.userImplBase {
             responseObserver.onNext(response.build());
             responseObserver.onCompleted();
         }
-        UserOuterClass.UserResponse.Builder response = UserOuterClass.UserResponse.newBuilder();
-        UserOuterClass.User.Builder userBuild = UserOuterClass.User.newBuilder();
-
-        userBuild.setEmail(null);
-        userBuild.setId(null);
-        response.setUser(userBuild);
-        responseObserver.onNext(response.build());
-        responseObserver.onCompleted();
 
     }
 
@@ -46,7 +39,7 @@ public class UserService extends userGrpc.userImplBase {
     public void create(UserOuterClass.UserRequest request, StreamObserver<UserOuterClass.UserResponse> responseObserver) {
 
         User user = new User(request.getUser().getId(), request.getUser().getUsername(), request.getUser().getEmail());
-        System.out.println(user);
+        System.out.println(user.toString());
         repository.save(user);
 
 
@@ -77,7 +70,6 @@ public class UserService extends userGrpc.userImplBase {
         }
         responseObserver.onNext(response.build());
         responseObserver.onCompleted();
-
     }
 
     @Override
@@ -92,7 +84,6 @@ public class UserService extends userGrpc.userImplBase {
         response.setUser(userBuild);
         responseObserver.onNext(response.build());
         responseObserver.onCompleted();
-
     }
 
     @Override
